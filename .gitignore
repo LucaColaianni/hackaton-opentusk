@@ -1,0 +1,44 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# macOS
+.DS_Store
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# Java / Maven
+**/target/
+*.class
+
+# Node / frontend tooling
+**/node_modules/
+**/dist/
+**/build/
+**/.next/
+**/.nuxt/
+**/.output/
+**/coverage/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Python tooling
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Editors and patch files
+*.swp
+*.swo
+*.orig
+*.rej
