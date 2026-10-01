@@ -5,7 +5,7 @@ import java.util.List;
 public record PathwayResponse(
         DoctorProfile doctor,
         List<PathwayStep> steps,
-        List<DemoOutcome> demoOutcomes,
+        List<PathwayOutcome> outcomes,
         CupReference cup,
         WaitTimeContext openDataContext) {
 
@@ -14,7 +14,7 @@ public record PathwayResponse(
     public record PathwayStep(String id, String title, String action, String responsible, List<String> documents,
                               String boundary) {}
 
-    public record DemoOutcome(String id, String label, String message, String nextStep, boolean leadsToCup) {}
+    public record PathwayOutcome(String id, String label, String message, String nextStep, boolean leadsToCup) {}
 
     public record CupReference(String title, String url, String owner, String verifiedAt,
                                List<String> bringWithYou, String limitation) {}

@@ -21,11 +21,11 @@ public class PathwayResource {
     @GET
     public PathwayResponse getPathway() {
         var doctor = new PathwayResponse.DoctorProfile(
-                "Medico di famiglia — profilo dimostrativo",
+                "Medico di famiglia associato",
                 "MMG",
-                "ASL Bari (scenario demo)",
+                "ASL Bari",
                 true,
-                "Profilo fittizio, senza recapiti. SPID e i dati del medico reale non sono collegati in questa demo.");
+                "Profilo mock senza recapiti. SPID e i dati del medico reale non sono collegati.");
 
         var steps = List.of(
                 new PathwayResponse.PathwayStep(
@@ -34,7 +34,7 @@ public class PathwayResource {
                         "Nella vita reale useresti i recapiti che ti ha fornito il tuo MMG. Porta la tessera sanitaria.",
                         "Persona assistita e MMG",
                         List.of("Tessera sanitaria"),
-                        "Il profilo mostrato qui è solo dimostrativo e non fornisce un contatto reale."),
+                        "Il profilo mock non fornisce un contatto reale."),
                 new PathwayResponse.PathwayStep(
                         "medical-assessment",
                         "Il medico valuta la richiesta",
@@ -51,16 +51,16 @@ public class PathwayResource {
                         "La ricetta e le istruzioni non vengono create o modificate dall'app."));
 
         var outcomes = List.of(
-                new PathwayResponse.DemoOutcome(
+                new PathwayResponse.PathwayOutcome(
                         "no-prescription",
-                        "Nel caso demo: nessuna ricetta",
-                        "Esito simulato. Nella realtà segui le indicazioni ricevute dal tuo medico.",
+                        "Nessuna ricetta",
+                        "Esito mock. Nella realtà segui le indicazioni ricevute dal tuo medico.",
                         "Il supporto MòSalute termina qui; per altri passi rivolgiti al professionista.",
                         false),
-                new PathwayResponse.DemoOutcome(
+                new PathwayResponse.PathwayOutcome(
                         "prescription-indicated",
-                        "Nel caso demo: ricetta indicata",
-                        "Esito simulato. Se nella realtà hai una prescrizione, prosegui con il canale CUP indicato dal prescrittore.",
+                        "Prescrizione indicata",
+                        "Esito mock. Se hai una prescrizione, prosegui con il canale CUP indicato dal prescrittore.",
                         "Tieni a portata di mano tessera sanitaria, codice fiscale e ricetta/promemoria. Il CUP conferma sede, data, ora, eventuale ticket e istruzioni.",
                         true));
 
